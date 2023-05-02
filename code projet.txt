@@ -1,0 +1,130 @@
+//les bibliothèques
+#include <iostream>
+#include <string>
+#include <vector>
+using namespace std;
+//création des classes
+class Contact {
+    private:
+        //création des informations de chaque personne
+        string nom;
+        string prenom;
+        string telephone;
+    
+    public:
+        // Constructeur
+        Contact() {
+            cout<<"Nom :"<<" ";
+            cin>>nom ;
+            cout<<"Prenom :"<<" ";
+            cin>>prenom ;
+            cout<<"Telephone :"<<" ";
+            cin>>telephone ;
+            cout<<"le contact a été enregistré"<<endl;
+            cout<<"-------------------------------------------------"<<endl;
+        }
+        // Getters
+       string getNom(){
+            return nom;
+        }
+        
+        string getPrenom(){
+            return prenom;
+        }
+        
+        string getTelephone(){
+            return telephone;
+        }
+};
+
+int main() {
+    //création de 3 objets exemplaires
+    Contact c1,c2,c3;
+    //création des variables 
+    string telephone_cherche;
+    string nom_cherche;
+    string prenom_cherche;
+    int choix;
+    //sélectionner le choix de recherche pour l'utilisateur
+    do{
+    cout<<"selectionner la manière du recherche"<<endl;
+    cout<<"1    par nom "<<endl;
+    cout<<"2    par prenom"<<endl;
+    cout<<"3    par telephone"<<endl;
+    cout<<"choisissez un nombre : ";
+    cin>>choix;
+    }
+    while(choix!=1 && choix!=2 && choix!=3);
+    //traitement du choix de l'utilisateur 
+    switch (choix) {
+       //par nom
+       case 1 : cout<<"le nom a chercher : "<<endl;
+            cin>>nom_cherche;
+            if (c1.getNom() == nom_cherche) {
+                 cout << "Le contact est : " << endl;
+                 cout << "Nom : " << c1.getNom() << endl;
+                 cout << "Prenom : " << c1.getPrenom() << endl;
+                 cout << "Telephone : " << c1.getTelephone() << endl;
+            }
+            else if(c2.getNom() == nom_cherche){
+                 cout << "Le contact est : " << endl;
+                 cout << "Nom : " << c2.getNom() << endl;
+                 cout << "Prenom : " << c2.getPrenom() << endl;
+                 cout << "Telephone : " << c2.getTelephone() << endl;}
+            else if(c3.getNom() == nom_cherche){
+                 cout << "Le contact est : " << endl;
+                 cout << "Nom : " << c3.getNom() << endl;
+                 cout << "Prenom : " << c3.getPrenom() << endl;
+                 cout << "Telephone : " << c3.getTelephone() << endl;}
+            else{
+                 cout << "Le contact n'a pas été trouvé." << endl;}
+            break;
+        //par prénom  
+        case 2 : cout<<"le prenom a chercher : "<<endl;
+            cin>>prenom_cherche;
+            if (c1.getPrenom() == prenom_cherche) {
+                 cout << "Le contact est : " << endl;
+                 cout << "Nom : " << c1.getNom() << endl;
+                 cout << "Prenom : " << c1.getPrenom() << endl;
+                 cout << "Telephone : " << c1.getTelephone() << endl;
+            }
+            else if(c2.getPrenom() == prenom_cherche){
+                 cout << "Le contact est : " << endl;
+                 cout << "Nom : " << c2.getNom() << endl;
+                 cout << "Prenom : " << c2.getPrenom() << endl;
+                 cout << "Telephone : " << c2.getTelephone() << endl;}
+            else if(c3.getPrenom() == prenom_cherche){
+                 cout << "Le contact est : " << endl;
+                 cout << "Nom : " << c3.getNom() << endl;
+                 cout << "Prenom : " << c3.getPrenom() << endl;
+                 cout << "Telephone : " << c3.getTelephone() << endl;}
+            else{
+                 cout << "Le contact n'a pas été trouvé." << endl;}
+            break;
+        //par numéro du téléphone
+        case 3 : 
+            cout<<"le numéro a chercher : "<<endl;
+            cin>>telephone_cherche ;
+            if (c1.getTelephone() == telephone_cherche) {
+                 cout << "Le contact est : " << endl;
+                 cout << "Nom : " << c1.getNom() << endl;
+                 cout << "Prenom : " << c1.getPrenom() << endl;
+                 cout << "Telephone : " << c1.getTelephone() << endl;
+            }
+            else if(c2.getTelephone() == telephone_cherche){
+                 cout << "Le contact est : " << endl;
+                 cout << "Nom : " << c2.getNom() << endl;
+                 cout << "Prenom : " << c2.getPrenom() << endl;
+                 cout << "Telephone : " << c2.getTelephone() << endl;}
+            else if(c3.getTelephone() == telephone_cherche){
+                 cout << "Le contact est : " << endl;
+                 cout << "Nom : " << c3.getNom() << endl;
+                 cout << "Prenom : " << c3.getPrenom() << endl;
+                 cout << "Telephone : " << c3.getTelephone() << endl;}
+            else{
+                cout << "Le contact n'a pas été trouvé." << endl;
+            }
+            break;
+   }
+    return 0;
+}
